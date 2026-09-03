@@ -1,0 +1,6 @@
+{
+  "name": "ARIMAS Distributed Database",
+  "description": "Prototype storage engine featuring AVLTree MemTable, Page blocks, in-memory DB operations, and text persistence for user records.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
