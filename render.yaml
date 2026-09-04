@@ -1,0 +1,38 @@
+services:
+  # 1. Java Spring Boot Backend Service
+  - type: web
+    name: arimas-java-backend
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: PORT
+        value: 8080
+
+  # 2. Node.js Express API Gateway (BFF)
+  - type: web
+    name: arimas-node-gateway
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    plan: free
+    envVars:
+      - key: JAVA_SERVICE_URL
+        fromService:
+          type: web
+          name: arimas-java-backend
+          envVarKey: RENDER_INTERNAL_HOSTNAME # Internal routing for lower latency
+
+  # 3. React Frontend (Static Site)
+  - type: web
+    name: arimas-react-frontend
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: ./dist
+    plan: free
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: arimas-node-gateway
+          envVarKey: RENDER_EXTERNAL_URL # External URL since this runs in the user's browser

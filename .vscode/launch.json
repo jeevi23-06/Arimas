@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot - ArimasApplication",
+      "request": "launch",
+      "mainClass": "com.arimas.ArimasApplication",
+      "projectName": "arimas-database",
+      "args": ""
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Frontend Dev Server",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"]
+    }
+  ]
+}
