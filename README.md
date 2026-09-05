@@ -1,6 +1,6 @@
 # ARIMAS Distributed Database Prototype
 
-A robust distributed database storage engine prototype featuring an in-memory AVLTree MemTable, bounded logical Page blocks, transactional in-memory Database coordinator, local text FileStorage durability, Spring Boot REST controllers, and a visual diagnostic UI.
+A robust distributed database storage engine prototype featuring an in-memory AVLTree MemTable, bounded logical Page blocks, transactional in-memory Database coordinator, local text FileStorage durability, Spring Boot REST controllers, and a visual diagnostic UI with React.
 
 ---
 
